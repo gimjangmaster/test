@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            let lv = 0;
+            const h1 = document.querySelector('#ew')
+            const level_1 = document.getElementById("lv.1")
+            const level_2 = document.getElementById("lv.2")
+            const level_3 = document.getElementById("lv.3")
+            const challenge = document.getElementById('challenge')
+
+
+            console.log(level_1, level_2, level_3)
+            level_1.addEventListener('click', (event)=>{
+                lv = 1
+                h1.textContent = `현제 래벨 : ${lv}`
+            })
+
+            level_2.addEventListener('click', (event)=>{
+                lv = 2
+                h1.textContent = `현제 래벨 : ${lv}`
+            })
+
+            level_3.addEventListener('click', (event)=>{
+                lv = 3
+                h1.textContent = `현제 래벨 : ${lv}`
+            })
+            
+            challenge.addEventListener('click', (event)=>{
+                if (lv == 1){
+                    challenge.onclick = window.location.href = 'post1.html'
+                }
+                else if (lv == 2){
+                    challenge.onclick = window.location.href = 'post2.html'
+                }
+                else if (lv == 3){
+                    challenge.onclick = window.location.href = 'post3.html'
+                }
+            })
+        })
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="kim">
+        <div><img src="firefly.jpg" alt="나의 프로필" height="200" width="150"><div>이름 : 김신우</div></div>
+        <div><p>회원정보</p></div>
+    
+    </header>
+    <div>
+        <button id = "lv.1" value="1">lv.1</button>
+        <button id = "lv.2" value="2">lv.2</button>
+        <button id = "lv.3" value="3">lv.3</button>
+        <h1 id = 'ew'></h1>
+        <button id = "challenge">도전하기</button>
+    </div>
+</body>
+</html>
